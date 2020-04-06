@@ -61,7 +61,7 @@ for i in range(0, 4):
 
 ###### Font ######
 # mpl
-font = {'size': 12, 'family': 'serif', 'serif': ['Times']}
+font = {'size': 24, 'family': 'serif', 'serif': ['Times']}
 matplotlib.rc('font', **font)
 matplotlib.rc('text', usetex=True)
 
@@ -77,11 +77,13 @@ fig_plo.update_layout(font=dict(
 # mpl
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
+ax.set_xlabel("Year")
+ax.set_ylabel("Market Share (%)")
 
 # plotly
 fig_plo.update_xaxes(title_text="Year", linecolor='black', # account for white background
                      row=1, col=1, zeroline=True, zerolinecolor='rgba(0,0,0,.5)', zerolinewidth=1,)
-fig_plo.update_yaxes(title_text="Market Share", linecolor='black', # account for white background
+fig_plo.update_yaxes(title_text="Market Share (%)", linecolor='black', # account for white background
                      row=1, col=1, zeroline=True, zerolinecolor='rgba(0,0,0,.5)', zerolinewidth=1,)
 
 
@@ -107,7 +109,7 @@ fig_plo.update_layout(plot_bgcolor='white',)
 ###### saving ######
 # mpl
 plt.show()
-plt.savefig(os.getcwd()+"plop_mpl.pdf", dpi=300)
+#ax.savefig(os.getcwd()+"plop_mpl.pdf", dpi=300)
 
 # plotly
 # advanced for saving
