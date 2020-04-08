@@ -86,6 +86,18 @@ fig_plo.update_xaxes(title_text="Year", linecolor='black', # account for white b
 fig_plo.update_yaxes(title_text="Market Share (%)", linecolor='black', # account for white background
                      row=1, col=1, zeroline=True, zerolinecolor='rgba(0,0,0,.5)', zerolinewidth=1,)
 
+###### grid lines & fun ######
+# mpl
+# Hide grid lines
+ax.grid(False)
+
+# Hide axes ticks
+#ax.set_xticks([])
+#ax.set_yticks([])
+#ax.set_zticks([])
+
+#plotly
+fig.update_layout(xaxis_showgrid=False, yaxis_showgrid=False)
 
 
 
